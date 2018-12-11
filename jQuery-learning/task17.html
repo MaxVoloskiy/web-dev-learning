@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on("click", "#add_comment", function () {
+                var form = $("form[name='form']");
+                form.css("display", "block");
+                $("#add_comment").replaceWith(form);
+            });
+
+            $(document).on("click", "input[name='send']", function () {
+                var comment = $("textarea[name='comment']").val();
+                alert("Loading");
+                $("<p>" + comment + "</p>").appendTo("#comments");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="comments">
+        <p>Comment 1</p>
+        <p>Comment 2</p>
+        <p>Comment 3</p>
+    </div>
+
+    <form name="form" action="#" method="post" id="form" style="display: none;" onsubmit="return false">
+        <textarea id="textarea" name="comment" cols="30" rows="10"></textarea>
+        <input type="submit" name="send" id="done" value="Add comment">
+    </form>
+
+    <a href="#" onclick="return false" id="add_comment">Add comment</a>
+</body>
+</html>

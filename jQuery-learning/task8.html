@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <img src="2.jpg" class="image" alt="image" title="image"><br>
+    <img src="3.jpg"><br>
+    <img src="4.jpg"><br>
+    <img src="5.jpg" alt="image" title="image"><br>
+
+    <script type="text/javascript">
+        $(":not(img[alt])").attr("alt", "jQuery");
+        var elements = $("img");
+        var text = "";
+        for (var i=0; i<elements.length; i++){
+            text += elements.get(i).className + "\n";
+        }
+        alert(text)
+    </script>
+</body>
+</html>

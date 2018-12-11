@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function incSize(event){
+            var width = Number(event.target.style.width.substring(0, event.target.style.width.length-2));
+            event.target.style.width = (width + 5) + "px";
+            $("<p>Mouse coordinates: x = " + event.screenX + ", y = " + event.screenY +"</p>").insertAfter("div:last");
+        }
+
+        $(document).ready(function () {
+            $("div").bind("click", incSize);
+            $(document).on("click", "p", function () {
+                alert("test");
+            })
+        });
+    </script>
+</head>
+<body>
+
+    <div style="height: 50px; width: 50px; background-color: red"></div>
+    <div style="height: 50px; width: 50px; background-color: blue"></div>
+    <div style="height: 50px; width: 50px; background-color: green"></div>
+
+</body>
+</html>

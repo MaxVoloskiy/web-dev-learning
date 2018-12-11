@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#img").bind("click", function (event) {
+                $(event.target).parent().css("text-align", "center");
+                $(event.target).animate({
+                    width: $(event.target).width * 5,
+                    height: $(event.target).height * 5,
+                }, 3000);
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <p id="test">
+        <img src="1.jpg" alt="image" title="image" id="img" width="200">
+    </p>
+
+</body>
+</html>
